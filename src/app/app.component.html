@@ -1,6 +1,15 @@
 
-<div>
+<!--div>
     <app-about></app-about>
     <div app-contacts></div>
+</div-->
+
+<div>
+    <a routerLink="/login">login</a>  -  
+
+    <a routerLink="/register">Register</a>
 </div>
-<!--router-outlet /-->
+ <div>
+    <span (click)="logout()">Logout</span>
+ </div>
+ <router-outlet />

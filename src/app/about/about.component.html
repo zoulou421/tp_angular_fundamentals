@@ -1,17 +1,38 @@
-<div>
-   <ul>
-      <li>Nom: {{info.nom}}</li>
-      <li>Email: {{info.email}}</li>
-      <li>Telephone: {{info.tel}}</li>
-   </ul>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">About</div>
+      <div class="card-body">
+
+       <div>
+         <h3 class="primary">Infos:</h3>
+         <ul class="list-group">
+            <li class="list-group-item">Nom: {{info.nom}}</li>
+            <li  class="list-group-item">Email: {{info.email}}</li>
+            <li  class="list-group-item">Telephone: {{info.tel}}</li>
+         </ul>   
+       </div>
+
+       <div>
+
+            <div class="form-group">
+               <label class="control-label">Message:</label>
+                <input type="text" [(ngModel)]="commentForm.message"/>
+                <button class="btn btn-primary" (click)="onAddCommentForm()">Add Comment</button>
+            </div>
+        
+        <h3 class="primary">Comments:</h3>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let c of comments">
+                {{c.message}},
+               <span class="badge rounded-pill bg-primary">{{c.date|date:'dd/MM/YYYY:HH:mm:ss'}}</span>
+            </li>
+        </ul>
+        </div>
+            
+        </div>
+      </div>
 </div>
 
 
-<div>
-    <ul>
-        <li *ngFor="let c of comments">
-            {{c.message}},
-           <span>{{c.date}}</span>
-        </li>
-    </ul>
- </div>
+

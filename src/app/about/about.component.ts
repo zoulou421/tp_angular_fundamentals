@@ -1,10 +1,12 @@
-import { NgFor } from '@angular/common';
+import { DatePipe, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,DatePipe,FormsModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
@@ -21,8 +23,17 @@ export class AboutComponent implements OnInit {
     {date:new Date(),message:"C"}
   ];
 
+ 
+  commentForm={date:null,message:""}
+
   constructor(){}
 
   ngOnInit(): void {}
+
+  
+  onAddCommentForm() {
+    
+  }
+    
 
 }
